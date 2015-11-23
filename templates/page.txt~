@@ -1,0 +1,147 @@
+<html>
+<head>
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<!---scripts-->
+<script src="../static/js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$(".search").val('');	
+	//spacebar keycode = 32
+	$(".search").keyup(function(event){
+		alert('hey');
+		if( event.keyCode == 32)
+			{
+			text = $(".search").val() ;
+			text = text.slice(0,text.length-1)+",";
+			$(".search").val( text );
+			}
+	});
+
+	});
+
+</script>
+
+<!--css-->
+
+<style>
+body{
+background-color:rgb(4,17,52);	
+background-image:url(static/gplay.png);
+background-size:500px 500px;
+color:#fff;
+font-family:Droid Sans;
+}
+.overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	background:rgba(0,0,0,0.5);
+	width:100%;
+	height:100%;
+	opacity:0;
+}
+.overlay .circle{
+	width:100px;
+	height:100px;
+	background:rgba(255,255,255,0.5);
+	color:#000;
+	border-radius:50%;
+	left:48%;
+	top:48%;
+}
+.title{
+padding:20px;
+text-align:center;
+text-transform:uppercase;
+border-bottom:10px double #fff;
+}
+.smalltitle{
+padding:20px;
+border-bottom:2px solid #fff;
+font-weight:700;
+text-align:center;
+text-transform:uppercase;
+}
+.searchContainer{
+margin-top:30px;
+margin-bottom:30px;
+}
+.search{
+width:100%;
+height:60px;
+margin-top:10px;
+margin-bottom:10px;
+border:1px solid #eee;
+color:#333;
+font-size:1.5em;
+box-shadow:0px 3px 6px rgba(0,0,0,0.2);
+padding-left:10px;
+}
+.submitBtn{
+margin-top:10px;
+padding:15px;
+box-shadow:0px 3px 4px rgba(0,0,0,0.2);
+border:0;
+border-radius:0;
+}
+.box{
+width:100%;
+height:auto;
+padding:10px;
+margin-top:20px;
+margin-bottom:30px;
+}
+.positiveBox li{
+background:#fff;
+color:limegreen;
+}
+.negativeBox li{
+background:#222;
+color:#fff;
+}
+.neutralBox li{
+background:#333;
+color:#eee;
+}
+.box ul li{
+list-style:none;
+padding:10px;
+box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+margin-bottom:10px;
+text-align:center;
+font-size:14px;
+}
+.resultContainer{
+margin-bottom:30px;
+}
+.resultContainer img{
+width:100%;
+height:auto;
+margin-bottom:20px;
+}
+</style>
+<title>Twitter Sentiment Analysis</title>
+<body>
+<div class="overlay">
+	<div class="circle"></div>
+</div>
+<div class="container">
+<div class="col-md-12 col-xs-12">
+<h2 class="title">find out what the twitterati think</h2>
+</div>
+<div class="col-md-12 col-xs-12">
+	<div class="searchContainer">
+		<form method="post">	
+			<h3>Enter search terms</h3>
+			<input type="text" class="search" id="searchBox" placeholder="iphone,#iphone,@iphone" name="tags" autofocus/>
+			<input type="submit" value="LET'S CHECK" class="submitBtn btn btn-success">	
+		</form>	
+	</div>	
+</div>
+<div class="col-md-12 col-xs-12">
+<div class="resultContainer">
+
+
+
+
